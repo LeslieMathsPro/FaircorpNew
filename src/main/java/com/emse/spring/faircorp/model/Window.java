@@ -19,12 +19,20 @@ public class Window {
     @ManyToOne
     private Room room;
 
-    public Window() {
+    public Window(String name, WindowStatus status, Room room) {
+        this.name = name;
+        this.windowStatus = status;
+        this.room = room;
     }
 
-    public Window(String name, WindowStatus status, Room room) {
-        this.windowStatus = status;
+    public Window(Room room) {
+        this.room = room;
+    }
+
+    public Window(Long id, String name, WindowStatus windowStatus, Room room){
+        this.id = id;
         this.name = name;
+        this.windowStatus = windowStatus;
         this.room = room;
     }
 
@@ -32,6 +40,9 @@ public class Window {
         return room;
     }
 
+    public void setRoom(Room room) {this.room = room; }
+
+    public Window() {}
 
     public Long getId() {
         return this.id;

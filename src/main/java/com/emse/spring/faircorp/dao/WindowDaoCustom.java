@@ -7,4 +7,8 @@ import com.emse.spring.faircorp.model.Window;
 
 public interface WindowDaoCustom {
     List<Window> findRoomOpenWindows(@Param("id") Long id);
+
+    int deleteAllWindowsInARoom(Long RoomId);
+
+    List<Window> findByRoomId(Long RoomId);
 }

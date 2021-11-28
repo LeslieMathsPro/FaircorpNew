@@ -22,4 +22,16 @@ public class WindowDaoCustomImpl implements WindowDaoCustom {
                 .setParameter("status", WindowStatus.OPEN)
                 .getResultList();
     }
+
+    @Override
+    public int deleteAllWindowsInARoom(Long id) {
+        String jpql = "delete from Window w where w.room.id = :id";
+        return em.createQuery(jpql).setParameter("id",id).executeUpdate();
+    }
+
+    @Override
+    public List<Window> findByRoomId(Long RoomId) {
+        String jpql = "select w from Window w where w.room.id = :id";
+        return em.createQuery(jpql, Window.class).setParameter("id", RoomId).getResultList();
+    }
 }
