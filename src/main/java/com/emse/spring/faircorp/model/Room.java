@@ -38,9 +38,7 @@ public class Room {
         return floor;
     }
 
-    public void setFloor(Integer floor) {
-        this.floor = floor;
-    }
+    public void setFloor(Integer floor) { this.floor = floor; }
 
     public String getName() {
         return name;
@@ -58,20 +56,10 @@ public class Room {
         this.currentTemperature = currentTemperature;
     }
 
-    public Double getTargetTemperature() {
-        return targetTemperature;
-    }
+    public Double getTargetTemperature() { return targetTemperature; }
 
     public void setTargetTemperature(Double targetTemperature) {
         this.targetTemperature = targetTemperature;
-    }
-
-    public Set<Heater> getHeaters() {
-        return heaters;
-    }
-
-    public void setHeaters(Set<Heater> heaters) {
-        this.heaters = heaters;
     }
 
     public Set<Window> getWindows() {
@@ -79,15 +67,17 @@ public class Room {
     }
 
     public void setWindows(Set<Window> windows) {
-        this.windows = windows;
+        windows = windows;
     }
 
     public Room() {
     }
 
-    public Room(String name, Integer floor){
+    public Room(Integer floor, String name, Double currentTemperature, Double targetTemperature){
         this.name = name;
         this.floor = floor;
+        this.currentTemperature = currentTemperature;
+        this.targetTemperature = targetTemperature;
     }
 
 }
